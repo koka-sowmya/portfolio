@@ -26,11 +26,14 @@ export default function CursorSlash() {
     canvas.setAttribute('aria-hidden', 'true');
     document.body.appendChild(canvas);
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
+    const context = canvas.getContext('2d');
+
+    if (context === null) {
       canvas.remove();
       return;
     }
+
+    const ctx: CanvasRenderingContext2D = context;
 
     let W = 0;
     let H = 0;
