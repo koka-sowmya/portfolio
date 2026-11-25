@@ -1,3 +1,4 @@
+
 # Koka Sowmya — Portfolio
 
 A personal portfolio built with **React 19 + TypeScript**, bundled with **esbuild**. All interface effects (intro, floating dock, comet card, flowing menu, chroma grid, scroll reveals, page transitions) are custom-written with CSS and React. Icons are Lucide (via `react-icons/lu`).
@@ -108,3 +109,7 @@ In `src/data/site.ts` set `socials: { github: 'https://github.com/…', linkedin
 
 ## Fonts
 Display: Instrument Serif (`@fontsource/instrument-serif`); body: Geist. Change `--font-serif` / `--font-sans` (or any per-role `--font-*`) in `src/styles/globals.css`.
+
+# portfolio
+My portfolio
+
