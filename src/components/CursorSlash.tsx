@@ -14,7 +14,7 @@ export default function CursorSlash() {
       life: 1200,
       maxWidth: 12,
       follow: 0.38,
-      glow: 100,
+      glow: 50,
       coreAlpha: 0.6,
       haloAlpha: 0.45,
       speedFull: 38,
