@@ -7,6 +7,18 @@ import {
   type Ref,
 } from 'react';
 
+const BASE_PATH = '/portfolio';
+
+function getAppPath() {
+  const pathname = window.location.pathname;
+
+  const path = pathname.startsWith(BASE_PATH)
+    ? pathname.slice(BASE_PATH.length)
+    : pathname;
+
+  return path.replace(/\/+$/, '') || '/';
+}
+
 // Minimal History-API router (no external dependency).
 const EVT = 'app:navigate';
 
@@ -22,13 +34,10 @@ export function navigate(to: string) {
 }
 
 export function usePath() {
-  const [path, setPath] = useState(
-    window.location.pathname.replace(/\/+$/, '') || '/'
-  );
+  const [path, setPath] = useState(getAppPath);
 
   useEffect(() => {
-    const on = () =>
-      setPath(window.location.pathname.replace(/\/+$/, '') || '/');
+    const on = () => setPath(getAppPath());
 
     window.addEventListener('popstate', on);
     window.addEventListener(EVT, on);
