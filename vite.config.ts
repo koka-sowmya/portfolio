@@ -1,9 +1,11 @@
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'node:path';
 import { existsSync } from 'node:fs';
 
+const BASE = '/portfolio/';
 const extensions = ['jpg', 'jpeg', 'png', 'webp'];
 
 const profile = extensions
@@ -13,6 +15,8 @@ const profile = extensions
   );
 
 export default defineConfig({
+  base: BASE,
+
   plugins: [react(), tailwindcss()],
 
   resolve: {
@@ -23,7 +27,7 @@ export default defineConfig({
 
   define: {
     __PROFILE_IMAGE__: JSON.stringify(
-      profile ? `/images/${profile}` : null
+      profile ? `${BASE}images/${profile}` : null
     ),
   },
 
