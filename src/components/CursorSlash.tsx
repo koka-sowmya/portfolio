@@ -12,7 +12,7 @@ export default function CursorSlash() {
     const CFG = {
       color: 'rgb(255, 151, 47)',
       life: 1200,
-      maxWidth: 32,
+      maxWidth: 12,
       follow: 0.38,
       glow: 100,
       coreAlpha: 0.6,
